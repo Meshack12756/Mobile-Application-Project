@@ -68,9 +68,30 @@ public class MainActivity extends AppCompatActivity {
                     etHeight.requestFocus();
                     return;
                 }
-
-               
+                // Calculate BMI
+                double bmi = weight / (height * height);
                 
+                // Determine BMI category
+                String category;
+                if (bmi < 18.5) {
+                    category = "Underweight";
+                } else if (bmi < 25) {
+                    category = "Normal weight";
+                } else if (bmi < 30) {
+                    category = "Overweight";
+                } else {
+                    category = "Obese";
+                }
+                
+                // Display result
+                String result = String.format("Your BMI: %.2f\nCategory: %s", bmi, category);
+                tvBMIResult.setText(result);
+                tvBMIResult.setVisibility(View.VISIBLE);
+                
+                // Show toast notification
+                Toast.makeText(MainActivity.this, 
+                        "BMI Calculated Successfully", 
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }
