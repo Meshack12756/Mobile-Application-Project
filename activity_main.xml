@@ -39,9 +39,13 @@
 
     <Button
         android:id="@+id/btnCalculate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Calculate BMI" />
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Calculate BMI"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="8dp"
+    android:padding="12dp"
+    android:textAllCaps="false" />
 
     <TextView
         android:id="@+id/tvBMIResult"
