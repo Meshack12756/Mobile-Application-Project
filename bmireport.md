@@ -1,15 +1,17 @@
 ```markdown
 BMI Calculator Android Application - Technical Report
 
-Project Information
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**Project Information**
 - Course: ICS 2300 Mobile Applications Design and Development
 - Assignment: Group Assignment 1 - Android App for BMI Classification
 - Platform: Android
 - Development Environment: Android Studio
 
----
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-**1. Application Overview**
+**1. APPLICATION OVERVIEW**
 
 The BMI Calculator is an Android application designed to help users calculate their Body Mass Index (BMI) and determine their weight category based on standardized health metrics. The application provides a simple, intuitive interface for users to input their weight and height, then displays their calculated BMI along with the corresponding health classification.
 
@@ -20,9 +22,9 @@ The primary purpose of this application is to provide users with a quick and acc
 - Understand their weight category (Underweight, Normal weight, Overweight, or Obese)
 - Monitor their health metrics in a user-friendly mobile interface
 
----
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-**2. App Design and Layout**
+**2. APP DESIGN AND LAYOUT**
 
 **2.1 User Interface Design**
 
@@ -33,14 +35,15 @@ The application follows Material Design principles to ensure a clean, modern, an
 The main layout consists of the following components:
 
 **Input Section**
-- **Weight Input Field (EditText)**: 
+
+• **Weight Input Field (EditText)**: 
   - ID: `etWeight`
   - Input Type: Decimal number
   - Hint: "Enter weight in kg"
   - Purpose: Captures the user's weight in kilograms
   - Validation: Required field with positive number validation
 
-- **Height Input Field (EditText)**: 
+• **Height Input Field (EditText)**: 
   - ID: `etHeight`
   - Input Type: Decimal number
   - Hint: "Enter height in meters"
@@ -48,27 +51,30 @@ The main layout consists of the following components:
   - Validation: Required field with positive number validation
 
 **Action Section**
-- **Calculate Button (Button)**:
+
+• **Calculate Button (Button)**:
   - ID: `btnCalculate`
   - Text: "Calculate BMI"
   - Purpose: Triggers the BMI calculation and validation when clicked
 
 **Output Section**
-- **BMI Result Display (TextView)**:
+
+• **BMI Result Display (TextView)**:
   - ID: `tvBMIResult`
   - Purpose: Displays the calculated BMI value (formatted to 2 decimal places) and category
   - Visibility: Initially hidden, becomes visible after successful calculation
 
 **2.3 Design Principles Applied**
+
 - **Simplicity**: Minimalist design with only essential elements
 - **Clarity**: Clear labels, hints, and error messages for each input field
 - **Responsiveness**: Immediate feedback through Toast notifications and error messages
 - **Accessibility**: Large touch targets and readable text sizes
 - **User Feedback**: Visual cues through error highlighting and success messages
 
----
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-**3. Logic for BMI Calculation**
+**3. LOGIC FOR BMI CALCULATION**
 
 **3.1 BMI Formula**
 
@@ -98,6 +104,8 @@ protected void onCreate(Bundle savedInstanceState) {
     tvBMIResult = findViewById(R.id.tvBMIResult);
 }
 ```
+
+Key points:
 - Declares UI components as class-level variables
 - Initializes all components using `findViewById()` in the `onCreate` method
 - Links XML layout elements to Java objects
@@ -107,6 +115,7 @@ protected void onCreate(Bundle savedInstanceState) {
 The application implements comprehensive multi-level validation:
 
 **Empty Field Validation:**
+
 ```java
 if (etWeight.getText().toString().trim().isEmpty()) {
     etWeight.setError("Please enter weight in kg");
@@ -120,12 +129,15 @@ if (etHeight.getText().toString().trim().isEmpty()) {
     return;
 }
 ```
+
+This validation:
 - Checks if input fields are empty before processing
 - Displays inline error messages using `setError()`
 - Moves cursor focus to the problematic field using `requestFocus()`
 - Prevents further execution with `return` statement
 
 **Number Format Validation:**
+
 ```java
 double weight, height;
 
@@ -139,11 +151,14 @@ try {
     return;
 }
 ```
+
+This validation:
 - Attempts to parse string inputs to double values
 - Catches `NumberFormatException` for invalid numeric formats
 - Displays Toast message for user-friendly error notification
 
 **Positive Value Validation:**
+
 ```java
 if (weight <= 0) {
     etWeight.setError("Weight must be greater than 0");
@@ -157,6 +172,8 @@ if (height <= 0) {
     return;
 }
 ```
+
+This validation:
 - Ensures weight and height are positive numbers
 - Prevents mathematically invalid or illogical inputs
 - Provides specific error messages for each field
@@ -166,6 +183,8 @@ if (height <= 0) {
 ```java
 double bmi = weight / (height * height);
 ```
+
+Implementation details:
 - Performs the mathematical calculation using double precision
 - Implements the standard BMI formula: BMI = weight / height²
 - Uses parentheses to ensure correct order of operations
@@ -207,33 +226,39 @@ Toast.makeText(MainActivity.this,
         "BMI Calculated Successfully", 
         Toast.LENGTH_SHORT).show();
 ```
+
+Display features:
 - Formats the BMI value to 2 decimal places using `String.format()`
 - Combines BMI value and category in a multi-line string using `\n`
 - Makes the result TextView visible using `setVisibility(View.VISIBLE)`
 - Displays a success Toast notification to confirm calculation completion
 
----
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-**4. Technical Implementation**
+**4. TECHNICAL IMPLEMENTATION**
 
 **4.1 MainActivity.java Structure**
 
 **Class Variables**
+
 ```java
 EditText etWeight, etHeight;
 Button btnCalculate;
 TextView tvBMIResult;
 ```
+
 - Declared at class level for accessibility throughout the activity
 - Represents the main UI components of the application
 
 **onCreate Method**
+
 - Entry point of the activity lifecycle
 - Initializes UI components using `findViewById()`
 - Sets up click listener for the calculate button using anonymous inner class
 - Contains all the calculation and validation logic within the button's `onClick` method
 
 **Event Handling**
+
 ```java
 btnCalculate.setOnClickListener(new View.OnClickListener() {
     @Override
@@ -242,11 +267,15 @@ btnCalculate.setOnClickListener(new View.OnClickListener() {
     }
 });
 ```
+
+Event handling approach:
 - Uses `OnClickListener` interface to handle button clicks
 - Implements all BMI calculation logic within the click event
 - Ensures calculation only occurs when user explicitly requests it
 
 **4.2 Key Features**
+
+The application implements several important features:
 
 - **Inline Error Display**: Uses `setError()` method to show validation errors directly on input fields
 - **Focus Management**: Automatically moves cursor to problematic fields using `requestFocus()`
@@ -255,9 +284,9 @@ btnCalculate.setOnClickListener(new View.OnClickListener() {
 - **Exception Handling**: Try-catch block prevents app crashes from invalid inputs
 - **Input Sanitization**: `trim()` method removes leading/trailing whitespace
 
----
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-**5. Test Case**
+**5. TEST CASE**
 
 The application has been tested with the following scenario to ensure accuracy and functionality:
 
@@ -266,9 +295,12 @@ The application has been tested with the following scenario to ensure accuracy a
 | TC-01 | 70 | 1.75 | 22.86 | Normal weight | Display "Your BMI: 22.86" and "Category: Normal weight", show success Toast | ✓ Pass |
 
 **Test Result Analysis:**
+
 - BMI calculation is accurate to 2 decimal places (22.86)
 - Category correctly classified as "Normal weight" (BMI within 18.5-25 range)
 - Result TextView becomes visible after calculation
 - Success Toast message displayed: "BMI Calculated Successfully"
 - All validation checks passed before calculation execution
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
