@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+<TextView
+    android:id="@+id/tvTitle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="BMI Calculator"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    android:gravity="center"
+    android:paddingBottom="8dp" />
+
+<TextView
+    android:id="@+id/tvSubtitle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Enter your details below"
+    android:textSize="14sp"
+    android:gravity="center"
+    android:paddingBottom="16dp" />
+
+    <EditText
+        android:id="@+id/etWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter weight (kg)"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/etHeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter height (m)"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btnCalculate"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Calculate BMI"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="8dp"
+    android:padding="12dp"
+    android:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/tvBMIResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BMI Result"
+        android:textSize="18sp"
+        android:paddingTop="16dp" />
+
+</LinearLayout>
