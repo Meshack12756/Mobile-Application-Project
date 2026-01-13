@@ -3,11 +3,23 @@
 ```markdown
 # BMI Calculator Android Application – Technical Report
 
----
+***
+
+## Project Information
+
+| Item                     | Description                                           |
+|--------------------------|-------------------------------------------------------|
+| Course                   | ICS 2300 – Mobile Applications Design and Development |
+| Assignment               | Group Assignment 1 – Android App for BMI Classification |
+| Platform                 | Android                                               |
+| Development Environment  | Android Studio                                        |
+
+***
 
 ## 1. Application Overview
 
-The **BMI Calculator** is an Android application designed to help users calculate their Body Mass Index (BMI) and determine their weight category based on standard health guidelines.  
+The **BMI Calculator** is an Android application designed to help users calculate their Body Mass Index (BMI) and determine their weight category based on standard health guidelines.
+
 The application provides a simple and intuitive interface where users enter their weight and height, after which the calculated BMI and corresponding health classification are displayed.
 
 ### 1.1 Purpose
@@ -18,7 +30,7 @@ The application enables users to:
 - Identify their weight category
 - Perform a quick health assessment using a mobile device
 
----
+***
 
 ## 2. App Design and Layout
 
@@ -47,9 +59,9 @@ The interface is simple and accessible to users of all ages and technical skill 
 
 #### Output Section
 
-| Component      | ID            | Description                                    |
-|----------------|---------------|------------------------------------------------|
-| Result TextView| `tvBMIResult` | Displays BMI value and category                |
+| Component       | ID            | Description                                    |
+|-----------------|---------------|------------------------------------------------|
+| Result TextView | `tvBMIResult` | Displays BMI value and category                |
 
 - Visibility: Hidden initially, shown after calculation
 
@@ -61,7 +73,7 @@ The interface is simple and accessible to users of all ages and technical skill 
 - Inline validation for user guidance
 - Readable text and accessible layout
 
----
+***
 
 ## 3. Logic for BMI Calculation
 
@@ -94,12 +106,18 @@ protected void onCreate(Bundle savedInstanceState) {
 
 #### 3.2.2 Input Validation
 
-**Empty Field Validation**
+**Empty Field Check**
 
 ```java
 if (etWeight.getText().toString().trim().isEmpty()) {
     etWeight.setError("Please enter weight in kg");
     etWeight.requestFocus();
+    return;
+}
+
+if (etHeight.getText().toString().trim().isEmpty()) {
+    etHeight.setError("Please enter height in meters");
+    etHeight.requestFocus();
     return;
 }
 ```
@@ -171,7 +189,7 @@ tvBMIResult.setVisibility(View.VISIBLE);
 Toast.makeText(MainActivity.this, "BMI Calculated Successfully", Toast.LENGTH_SHORT).show();
 ```
 
----
+***
 
 ## 4. Technical Implementation
 
@@ -192,7 +210,7 @@ Toast.makeText(MainActivity.this, "BMI Calculated Successfully", Toast.LENGTH_SH
 - Exception handling to prevent crashes
 - Input sanitization using `trim()`
 
----
+***
 
 ## 5. Test Case
 
@@ -208,4 +226,8 @@ Toast.makeText(MainActivity.this, "BMI Calculated Successfully", Toast.LENGTH_SH
 - Success Toast displayed
 - All validations passed
 
----
+***
+
+**End of Document**
+```
+
