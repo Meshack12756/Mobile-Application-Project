@@ -1,94 +1,124 @@
-```markdown
-BMI Calculator Android Application - Technical Report
+---
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BMI Calculator Android Application – Technical Report
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-**Project Information**
-- Course: ICS 2300 Mobile Applications Design and Development
-- Assignment: Group Assignment 1 - Android App for BMI Classification
-- Platform: Android
-- Development Environment: Android Studio
+Project Information
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Course: ICS 2300 – Mobile Applications Design and Development
 
-**1. APPLICATION OVERVIEW**
+Assignment: Group Assignment 1 – Android App for BMI Classification
 
-The BMI Calculator is an Android application designed to help users calculate their Body Mass Index (BMI) and determine their weight category based on standardized health metrics. The application provides a simple, intuitive interface for users to input their weight and height, then displays their calculated BMI along with the corresponding health classification.
+Platform: Android
 
-**1.1 Purpose**
+Development Environment: Android Studio
 
-The primary purpose of this application is to provide users with a quick and accurate way to:
-- Calculate their BMI using the standard formula
-- Understand their weight category (Underweight, Normal weight, Overweight, or Obese)
-- Monitor their health metrics in a user-friendly mobile interface
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-**2. APP DESIGN AND LAYOUT**
+1. Application Overview
 
-**2.1 User Interface Design**
+The BMI Calculator is an Android application designed to help users calculate their Body Mass Index (BMI) and determine their weight category based on standardized health metrics. The application provides a simple and intuitive interface where users input their weight and height, after which the calculated BMI and corresponding health classification are displayed.
 
-The application follows Material Design principles to ensure a clean, modern, and intuitive user experience. The layout is designed to be simple yet functional, making it accessible for users of all ages and technical abilities.
+1.1 Purpose
 
-**2.2 Layout Structure (activity_main.xml)**
+The primary purpose of this application is to enable users to:
 
-The main layout consists of the following components:
+Calculate their BMI using the standard medical formula
 
-**Input Section**
+Understand their weight classification
 
-• **Weight Input Field (EditText)**: 
-  - ID: `etWeight`
-  - Input Type: Decimal number
-  - Hint: "Enter weight in kg"
-  - Purpose: Captures the user's weight in kilograms
-  - Validation: Required field with positive number validation
+Monitor basic health metrics using a mobile application
 
-• **Height Input Field (EditText)**: 
-  - ID: `etHeight`
-  - Input Type: Decimal number
-  - Hint: "Enter height in meters"
-  - Purpose: Captures the user's height in meters
-  - Validation: Required field with positive number validation
 
-**Action Section**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-• **Calculate Button (Button)**:
-  - ID: `btnCalculate`
-  - Text: "Calculate BMI"
-  - Purpose: Triggers the BMI calculation and validation when clicked
+2. App Design and Layout
 
-**Output Section**
+2.1 User Interface Design
 
-• **BMI Result Display (TextView)**:
-  - ID: `tvBMIResult`
-  - Purpose: Displays the calculated BMI value (formatted to 2 decimal places) and category
-  - Visibility: Initially hidden, becomes visible after successful calculation
+The application follows Material Design principles, ensuring a clean, modern, and user-friendly experience. The interface is simple and accessible to users of all ages and technical skill levels.
 
-**2.3 Design Principles Applied**
+2.2 Layout Structure (activity_main.xml)
 
-- **Simplicity**: Minimalist design with only essential elements
-- **Clarity**: Clear labels, hints, and error messages for each input field
-- **Responsiveness**: Immediate feedback through Toast notifications and error messages
-- **Accessibility**: Large touch targets and readable text sizes
-- **User Feedback**: Visual cues through error highlighting and success messages
+The main layout consists of three major sections:
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Input Section
 
-**3. LOGIC FOR BMI CALCULATION**
+Weight Input Field (EditText)
 
-**3.1 BMI Formula**
+ID: etWeight
 
-The application uses the standard BMI calculation formula:
+Input Type: Decimal number
 
-```
+Hint: Enter weight in kg
+
+Purpose: Captures the user’s weight in kilograms
+
+Validation: Required, must be a positive number
+
+
+Height Input Field (EditText)
+
+ID: etHeight
+
+Input Type: Decimal number
+
+Hint: Enter height in meters
+
+Purpose: Captures the user’s height in meters
+
+Validation: Required, must be a positive number
+
+
+Action Section
+
+Calculate Button (Button)
+
+ID: btnCalculate
+
+Text: Calculate BMI
+
+Purpose: Triggers validation and BMI calculation
+
+
+Output Section
+
+BMI Result Display (TextView)
+
+ID: tvBMIResult
+
+Purpose: Displays the calculated BMI (2 decimal places) and category
+
+Visibility: Hidden initially, visible after successful calculation
+
+
+2.3 Design Principles Applied
+
+Simplicity: Minimal interface with essential components only
+
+Clarity: Clear hints, labels, and error messages
+
+Responsiveness: Instant feedback via Toast messages
+
+Accessibility: Readable text and large touch targets
+
+User Feedback: Inline errors and success notifications
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3. Logic for BMI Calculation
+
+3.1 BMI Formula
+
 BMI = weight (kg) / height² (m²)
-```
 
-**3.2 Implementation Logic (MainActivity.java)**
+3.2 Implementation Logic (MainActivity.java)
 
-**3.2.1 Component Initialization**
+3.2.1 Component Initialization
 
-```java
 EditText etWeight, etHeight;
 Button btnCalculate;
 TextView tvBMIResult;
@@ -97,26 +127,26 @@ TextView tvBMIResult;
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-    
+
     etWeight = findViewById(R.id.etWeight);
     etHeight = findViewById(R.id.etHeight);
     btnCalculate = findViewById(R.id.btnCalculate);
     tvBMIResult = findViewById(R.id.tvBMIResult);
 }
-```
 
-Key points:
-- Declares UI components as class-level variables
-- Initializes all components using `findViewById()` in the `onCreate` method
-- Links XML layout elements to Java objects
+Explanation:
 
-**3.2.2 Input Validation**
+UI components are declared as class-level variables
 
-The application implements comprehensive multi-level validation:
+findViewById() links XML elements to Java objects
 
-**Empty Field Validation:**
+Initialization occurs in the onCreate() lifecycle method
 
-```java
+
+3.2.2 Input Validation
+
+Empty Field Validation
+
 if (etWeight.getText().toString().trim().isEmpty()) {
     etWeight.setError("Please enter weight in kg");
     etWeight.requestFocus();
@@ -128,17 +158,16 @@ if (etHeight.getText().toString().trim().isEmpty()) {
     etHeight.requestFocus();
     return;
 }
-```
 
-This validation:
-- Checks if input fields are empty before processing
-- Displays inline error messages using `setError()`
-- Moves cursor focus to the problematic field using `requestFocus()`
-- Prevents further execution with `return` statement
+Prevents calculation with missing inputs
 
-**Number Format Validation:**
+Displays inline error messages
 
-```java
+Automatically focuses on the invalid field
+
+
+Number Format Validation
+
 double weight, height;
 
 try {
@@ -150,16 +179,16 @@ try {
             Toast.LENGTH_SHORT).show();
     return;
 }
-```
 
-This validation:
-- Attempts to parse string inputs to double values
-- Catches `NumberFormatException` for invalid numeric formats
-- Displays Toast message for user-friendly error notification
+Ensures inputs are valid numbers
 
-**Positive Value Validation:**
+Prevents application crashes
 
-```java
+Displays user-friendly error feedback
+
+
+Positive Value Validation
+
 if (weight <= 0) {
     etWeight.setError("Weight must be greater than 0");
     etWeight.requestFocus();
@@ -171,29 +200,23 @@ if (height <= 0) {
     etHeight.requestFocus();
     return;
 }
-```
 
-This validation:
-- Ensures weight and height are positive numbers
-- Prevents mathematically invalid or illogical inputs
-- Provides specific error messages for each field
+Rejects negative or zero values
 
-**3.2.3 BMI Calculation**
+Ensures logical and mathematical correctness
 
-```java
+
+3.2.3 BMI Calculation
+
 double bmi = weight / (height * height);
-```
 
-Implementation details:
-- Performs the mathematical calculation using double precision
-- Implements the standard BMI formula: BMI = weight / height²
-- Uses parentheses to ensure correct order of operations
+Uses double precision for accuracy
 
-**3.2.4 Category Classification**
+Applies the standard BMI formula
 
-The application classifies BMI values according to WHO standards:
 
-```java
+3.2.4 BMI Category Classification
+
 String category;
 if (bmi < 18.5) {
     category = "Underweight";
@@ -204,103 +227,102 @@ if (bmi < 18.5) {
 } else {
     category = "Obese";
 }
-```
 
-**Classification Ranges:**
+Classification Table
 
-| Category | BMI Range | Health Implication |
-|----------|-----------|-------------------|
-| Underweight | BMI < 18.5 | Below healthy weight |
-| Normal weight | 18.5 ≤ BMI < 25 | Healthy weight range |
-| Overweight | 25 ≤ BMI < 30 | Above healthy weight |
-| Obese | BMI ≥ 30 | Significantly above healthy weight |
+Category	BMI Range	Health Implication
 
-**3.2.5 Result Display**
+Underweight	BMI < 18.5	Below healthy weight
+Normal weight	18.5 ≤ BMI < 25	Healthy weight range
+Overweight	25 ≤ BMI < 30	Above healthy weight
+Obese	BMI ≥ 30	Significantly above healthy weight
 
-```java
-String result = String.format("Your BMI: %.2f\nCategory: %s", bmi, category);
+
+3.2.5 Result Display
+
+String result = String.format(
+        "Your BMI: %.2f\nCategory: %s", bmi, category);
+
 tvBMIResult.setText(result);
 tvBMIResult.setVisibility(View.VISIBLE);
 
-Toast.makeText(MainActivity.this, 
-        "BMI Calculated Successfully", 
+Toast.makeText(MainActivity.this,
+        "BMI Calculated Successfully",
         Toast.LENGTH_SHORT).show();
-```
 
-Display features:
-- Formats the BMI value to 2 decimal places using `String.format()`
-- Combines BMI value and category in a multi-line string using `\n`
-- Makes the result TextView visible using `setVisibility(View.VISIBLE)`
-- Displays a success Toast notification to confirm calculation completion
+BMI displayed to 2 decimal places
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Result shown only after successful calculation
 
-**4. TECHNICAL IMPLEMENTATION**
+Confirmation provided via Toast message
 
-**4.1 MainActivity.java Structure**
 
-**Class Variables**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-```java
+4. Technical Implementation
+
+4.1 MainActivity.java Structure
+
+Class Variables
+
 EditText etWeight, etHeight;
 Button btnCalculate;
 TextView tvBMIResult;
-```
 
-- Declared at class level for accessibility throughout the activity
-- Represents the main UI components of the application
+Accessible throughout the activity
 
-**onCreate Method**
+Represent key UI elements
 
-- Entry point of the activity lifecycle
-- Initializes UI components using `findViewById()`
-- Sets up click listener for the calculate button using anonymous inner class
-- Contains all the calculation and validation logic within the button's `onClick` method
 
-**Event Handling**
+Event Handling
 
-```java
 btnCalculate.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        // Validation and calculation logic
+        // Validation and BMI calculation logic
     }
 });
-```
 
-Event handling approach:
-- Uses `OnClickListener` interface to handle button clicks
-- Implements all BMI calculation logic within the click event
-- Ensures calculation only occurs when user explicitly requests it
+BMI calculation is user-triggered
 
-**4.2 Key Features**
+All logic executed only on button click
 
-The application implements several important features:
 
-- **Inline Error Display**: Uses `setError()` method to show validation errors directly on input fields
-- **Focus Management**: Automatically moves cursor to problematic fields using `requestFocus()`
-- **Toast Notifications**: Provides non-intrusive feedback for both errors and success
-- **Dynamic Visibility**: Result TextView is only shown after successful calculation
-- **Exception Handling**: Try-catch block prevents app crashes from invalid inputs
-- **Input Sanitization**: `trim()` method removes leading/trailing whitespace
+4.2 Key Features
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Inline validation using setError()
 
-**5. TEST CASE**
+Automatic focus control with requestFocus()
 
-The application has been tested with the following scenario to ensure accuracy and functionality:
+Toast notifications for feedback
 
-| Test Case | Weight (kg) | Height (m) | Expected BMI | Expected Category | Expected Behavior | Status |
-|-----------|-------------|------------|--------------|-------------------|-------------------|---------|
-| TC-01 | 70 | 1.75 | 22.86 | Normal weight | Display "Your BMI: 22.86" and "Category: Normal weight", show success Toast | ✓ Pass |
+Dynamic visibility control of results
 
-**Test Result Analysis:**
+Exception handling with try-catch
 
-- BMI calculation is accurate to 2 decimal places (22.86)
-- Category correctly classified as "Normal weight" (BMI within 18.5-25 range)
-- Result TextView becomes visible after calculation
-- Success Toast message displayed: "BMI Calculated Successfully"
-- All validation checks passed before calculation execution
+Input sanitization using trim()
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-```
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5. Test Case
+
+Test Case	Weight (kg)	Height (m)	Expected BMI	Expected Category	Expected Behavior	Status
+
+TC-01	70	1.75	22.86	Normal weight	Correct result displayed, success Toast shown	✓ Pass
+
+
+Test Result Analysis
+
+BMI calculated accurately (22.86)
+
+Category correctly identified as Normal weight
+
+Result TextView displayed successfully
+
+Toast message confirms successful calculation
+
+All validation checks executed correctly
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
