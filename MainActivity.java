@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
              
                 if (etWeight.getText().toString().trim().isEmpty()) {
                     etWeight.setError("Please enter weight in kg");
@@ -44,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 double weight, height;
-
                 
                 try {
                     weight = Double.parseDouble(etWeight.getText().toString().trim());
@@ -55,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
-
                
                 if (weight <= 0) {
                     etWeight.setError("Weight must be greater than 0");
