@@ -7,4 +7,7 @@
     <string name="details">Enter your details below</string>
     <string name="weight">Enter weight (kg)</string>
     <string name="height">Enter height (m)</string>
+    <string name="bmi_result_format">
+    Your BMI: %.2f\nCategory: %s
+    </string>
 </resources>
