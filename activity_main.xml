@@ -47,6 +47,17 @@
     android:padding="12dp"
     android:textAllCaps="false" />
 
+      <Button
+        android:id="@+id/btnClear"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Clear"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="8dp"
+    android:padding="12dp"
+    android:textAllCaps="false" />
+    
+
     <TextView
         android:id="@+id/tvBMIResult"
         android:layout_width="match_parent"
