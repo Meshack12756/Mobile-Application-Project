@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     EditText etWeight, etHeight;
-    Button btnCalculate;
+    Button btnCalculate, btnClear;
     TextView tvBMIResult;
 
     @Override
@@ -20,16 +20,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        
         etWeight = findViewById(R.id.etWeight);
         etHeight = findViewById(R.id.etHeight);
         btnCalculate = findViewById(R.id.btnCalculate);
+        btnClear = findViewById(R.id.btnClear);
         tvBMIResult = findViewById(R.id.tvBMIResult);
 
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             
+
                 if (etWeight.getText().toString().trim().isEmpty()) {
                     etWeight.setError("Please enter weight in kg");
                     etWeight.requestFocus();
@@ -39,11 +39,11 @@ public class MainActivity extends AppCompatActivity {
                 if (etHeight.getText().toString().trim().isEmpty()) {
                     etHeight.setError("Please enter height in meters");
                     etHeight.requestFocus();
-                    return; 
+                    return;
                 }
 
                 double weight, height;
-                
+
                 try {
                     weight = Double.parseDouble(etWeight.getText().toString().trim());
                     height = Double.parseDouble(etHeight.getText().toString().trim());
@@ -53,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
-               
+
                 if (weight <= 0) {
                     etWeight.setError("Weight must be greater than 0");
                     etWeight.requestFocus();
-                    return; 
+                    return;
                 }
 
                 if (height <= 0) {
@@ -65,10 +65,9 @@ public class MainActivity extends AppCompatActivity {
                     etHeight.requestFocus();
                     return;
                 }
-                // Calculate BMI
+
                 double bmi = weight / (height * height);
-                
-                // Determine BMI category
+
                 String category;
                 if (bmi < 18.5) {
                     category = "Underweight";
@@ -79,15 +78,28 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     category = "Obese";
                 }
-                
-                // Display result
+
                 String result = String.format("Your BMI: %.2f\nCategory: %s", bmi, category);
                 tvBMIResult.setText(result);
                 tvBMIResult.setVisibility(View.VISIBLE);
-                
-                // Show toast notification
-                Toast.makeText(MainActivity.this, 
-                        "BMI Calculated Successfully", 
+
+                Toast.makeText(MainActivity.this,
+                        "BMI Calculated Successfully",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etWeight.setText("");
+                etHeight.setText("");
+                tvBMIResult.setText("");
+                tvBMIResult.setVisibility(View.GONE);
+                etWeight.requestFocus();
+
+                Toast.makeText(MainActivity.this,
+                        "Cleared. Enter new values.",
                         Toast.LENGTH_SHORT).show();
             }
         });
