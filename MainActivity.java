@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 if (etHeight.getText().toString().trim().isEmpty()) {
                     etHeight.setError("Please enter height in meters");
                     etHeight.requestFocus();
-                    return;
+                    return; 
                 }
 
                 double weight, height;
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 if (weight <= 0) {
                     etWeight.setError("Weight must be greater than 0");
                     etWeight.requestFocus();
-                    return;
+                    return; 
                 }
 
                 if (height <= 0) {
