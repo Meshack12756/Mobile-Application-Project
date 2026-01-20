@@ -4,65 +4,67 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp">
-<TextView
-    android:id="@+id/tvTitle"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="BMI Calculator"
-    android:textSize="24sp"
-    android:textStyle="bold"
-    android:gravity="center"
-    android:paddingBottom="8dp" />
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/BMI_Calculator"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="8dp" />
 
-<TextView
-    android:id="@+id/tvSubtitle"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Enter your details below"
-    android:textSize="14sp"
-    android:gravity="center"
-    android:paddingBottom="16dp" />
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/details"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
 
     <EditText
         android:id="@+id/etWeight"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter weight (kg)"
+        android:layout_height="48dp"
+        android:hint="@string/weight"
+        android:autofillHints="weight"
         android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/etHeight"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter height (m)"
+        android:layout_height="48dp"
+        android:hint="@string/height"
+        android:autofillHints="height"
         android:inputType="numberDecimal" />
 
     <Button
         android:id="@+id/btnCalculate"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Calculate BMI"
-    android:layout_marginTop="16dp"
-    android:layout_marginBottom="8dp"
-    android:padding="12dp"
-    android:textAllCaps="false" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate_bmi"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:padding="12dp"
+        android:textAllCaps="false" />
 
-      <Button
+    <Button
         android:id="@+id/btnClear"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Clear"
-    android:layout_marginTop="16dp"
-    android:layout_marginBottom="8dp"
-    android:padding="12dp"
-    android:textAllCaps="false" />
-    
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/clear"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:padding="12dp"
+        android:textAllCaps="false" />
+
 
     <TextView
         android:id="@+id/tvBMIResult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="BMI Result"
+        android:text="@string/BMI_R"
         android:textSize="18sp"
         android:paddingTop="16dp" />
 
