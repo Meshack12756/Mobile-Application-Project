@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                     category = "Obese";
                 }
 
-                String result = String.format("Your BMI: %.2f\nCategory: %s", bmi, category);
+                String result = String.format(getString(R.string.bmi_result_format),bmi, category);
                 tvBMIResult.setText(result);
                 tvBMIResult.setVisibility(View.VISIBLE);
 
